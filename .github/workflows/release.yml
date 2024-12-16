@@ -34,13 +34,13 @@ jobs:
       - name: Build package
         run: |
           python setup.py sdist bdist_wheel
-
-      # - name: Upload package
-      #   run: |
-      #     twine upload -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_PASS }} dist/*
-
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+      
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          name: 'v${{ env.NEW_VERSION }}'
-          tag_name: 'v${{ env.NEW_VERSION }}'
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          release_name: 'v${{ env.NEW_VERSION }}'
+          tag: 'v${{ env.NEW_VERSION }}'
+          file: dist/*.whl
+          overwrite: true
+          file_glob: true
