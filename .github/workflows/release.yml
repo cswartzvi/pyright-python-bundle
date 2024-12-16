@@ -31,9 +31,9 @@ jobs:
         run: |
           python setup.py sdist bdist_wheel
 
-      - name: Upload package
-        run: |
-          twine upload -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_PASS }} dist/*
+      # - name: Upload package
+      #   run: |
+      #     twine upload -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_PASS }} dist/*
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
