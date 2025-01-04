@@ -177,7 +177,7 @@ jobs:
         run: |
           REF=$(echo $GITHUB_REF | sed 's/refs\/heads\///')
           docker run python:3.11.4 /bin/sh -c "
-            pip install git+https://github.com/RobertCraigie/pyright-python.git@$REF && \
+            pip install git+https://github.com/cswartzvi/pyright-python-bundle.git@$REF && \
             pyright --version
           "
 
