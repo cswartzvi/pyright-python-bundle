@@ -49,7 +49,6 @@ jobs:
             [1]: https://github.com/peter-evans/create-pull-request
           labels: |
             automated pr
-          team-reviewers: |
-            owners
-            maintainers
+          reviewers: |
+            cswartzvi
           draft: false
