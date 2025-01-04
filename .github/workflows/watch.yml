@@ -34,8 +34,10 @@ jobs:
       - name: Create Pull Request
         if: ${{ env.PYRIGHT_OUT_OF_DATE == '1' }}
         uses: peter-evans/create-pull-request@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_TOKEN }}
           commit-message: Pyright NPM Package update to ${{ env.PYRIGHT_VERSION }}
           signoff: false
           branch: pyright-update-${{ env.BRANCH_NAME }}
