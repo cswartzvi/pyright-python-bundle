@@ -48,5 +48,5 @@ jobs:
           labels: |
             automated pr
           team-reviewers: |
-            owners
+            cswartzvi
           draft: false
