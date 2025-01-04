@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python 3.9
         uses: actions/setup-python@v1
@@ -49,6 +47,6 @@ jobs:
             [1]: https://github.com/peter-evans/create-pull-request
           labels: |
             automated pr
-          reviewers: |
-            cswartzvi
+          team-reviewers: |
+            owners
           draft: false
